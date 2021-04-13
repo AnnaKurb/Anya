@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 
 TOKEN = '1604519780:AAF8-7AWybW-SOPVrBDjMBijv1aQr6Fu2j4'
 book = load_workbook('анчоус.xlsx')
-sheet_1 = book['Лист1']
+sheet_1 = book['Лист1']   #добавляю икс эль файл
 stikers_sheet = book['анчоус']
 
 def main():
@@ -27,13 +27,14 @@ def main():
 
 
 def do_echo(update, context):
-    update.message.reply_text(text='ну привет')
+    update.message.reply_text(text='ну привет') # создаем функцию повторения
+
 
 
 def do_start(update, context):
     keyboard = [
         ['1', '2', '3'],
-        ['привет', 'сыр', 'пока', 'майнкрафт'],
+        ['привет', 'сыр', 'пока', 'майнкрафт'], # создаем кнопочик
     ]
     update.message.reply_text(
         text=')))0))0)',
@@ -55,7 +56,7 @@ def do_something(update: Update, context):
             stikers_id = stikers_sheet.cell(row=row, column=3).value
             update.message.reply_sticker(stikers_id)
             return
-
+# создаем ответы для кнопочек
 
     if text == '1':
          update.message.reply_text('Вы нажали 1', reply_markup=ReplyKeyboardRemove())
